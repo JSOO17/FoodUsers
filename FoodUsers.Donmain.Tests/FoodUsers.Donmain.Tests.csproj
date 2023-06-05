@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FoodUsers.Infrastructure.API\FoodUsers.Infrastructure.API.csproj" />
+    <ProjectReference Include="..\FoodUsers.Domain\FoodUsers.Domain.csproj" />
   </ItemGroup>
 
 </Project>

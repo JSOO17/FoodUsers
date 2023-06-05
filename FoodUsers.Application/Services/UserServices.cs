@@ -2,7 +2,7 @@
 using FoodUsers.Application.DTO.Response;
 using FoodUsers.Application.Mappers;
 using FoodUsers.Application.Services.Interfaces;
-using FoodUsers.Domain.Intefaces;
+using FoodUsers.Domain.Intefaces.API;
 using FoodUsers.Domain.Models;
 
 namespace FoodUsers.Application.Services
@@ -15,11 +15,13 @@ namespace FoodUsers.Application.Services
             this.userServicesPort = userServicesPort;
         }
 
-        public async Task CreateUser(UserRequestDTO userDTO)
+        public async Task<UserResponseDTO> CreateUser(UserRequestDTO userRequest, string identityRoleId)
         {
-            var user = UserMapper.ToUser(userDTO);
+            var user = UserMapper.ToUser(userRequest);
 
-            await userServicesPort.CreateUser(user);
+            var userModel = await userServicesPort.CreateUser(user, identityRoleId);
+
+            return UserMapper.ToUserResponseDTO(userModel);
         }
 
         public async Task<UserResponseDTO> GetUser(int id)
@@ -29,11 +31,11 @@ namespace FoodUsers.Application.Services
             return UserMapper.ToUserResponseDTO(user);
         }
 
-        public async Task<UserResponseDTO> GetUser(string email, string password)
+        public async Task<UserResponseDTO?> GetUser(string email, string password)
         {
             var user = await userServicesPort.GetUser(email, password);
 
-            return UserMapper.ToUserResponseDTO(user);
+            return user == null ? null : UserMapper.ToUserResponseDTO(user);
         }
     }
 }

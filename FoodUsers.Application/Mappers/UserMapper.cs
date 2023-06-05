@@ -9,22 +9,22 @@ namespace FoodUsers.Application.Mappers
     {
         private readonly IMapper mapper;
 
-        public static UserResponseDTO ToUserResponseDTO(User user)
+        public static UserResponseDTO ToUserResponseDTO(UserModel user)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<User, UserResponseDTO>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserModel, UserResponseDTO>());
 
             var mapper = new Mapper(config);
 
-            return mapper.Map<User, UserResponseDTO>(user);
+            return mapper.Map<UserModel, UserResponseDTO>(user);
         }
 
-        public static User ToUser(UserRequestDTO user)
+        public static UserModel ToUser(UserRequestDTO user)
         {
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserRequestDTO, User>());
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserRequestDTO, UserModel>());
 
             var mapper = new Mapper(config);
 
-            return mapper.Map<UserRequestDTO, User>(user);
+            return mapper.Map<UserRequestDTO, UserModel>(user);
         }
     }
 }
