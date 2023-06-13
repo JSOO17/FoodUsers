@@ -71,7 +71,7 @@ namespace FoodUsers.Infrastructure.API.Controllers
                 return StatusCode(500, new ApiResult
                 {
                     StatusCode = 500,
-                    Message = "Something was wrong"
+                    Message = "Something was wrong. Exception: " + ex.Message
                 });
             }
         }
