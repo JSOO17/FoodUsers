@@ -70,9 +70,7 @@ namespace FoodUsers.Domain.UserCases
             var rolesAllowed = rolesValidation[roleId];
 
             if (!rolesAllowed.Contains(identityRoleId))
-            {
                 throw new RoleHasNotPermissionException("You don´t have permission");
-            }
         }
     }
 }
