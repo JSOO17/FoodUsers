@@ -6,7 +6,7 @@ namespace FoodUsers.Application.Services.Interfaces
 {
     public interface IUserServices
     {
-        Task<UserResponseDTO> CreateUser(UserRequestDTO user, string identityRoleId);
+        Task<UserResponseDTO> CreateUser(UserRequestDTO userRequest, string identityRoleId);
         Task<UserResponseDTO> GetUser(int id);
         Task<UserResponseDTO?> GetUser(string email, string password);
     }
