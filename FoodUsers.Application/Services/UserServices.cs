@@ -3,7 +3,6 @@ using FoodUsers.Application.DTO.Response;
 using FoodUsers.Application.Mappers;
 using FoodUsers.Application.Services.Interfaces;
 using FoodUsers.Domain.Intefaces.API;
-using FoodUsers.Domain.Models;
 
 namespace FoodUsers.Application.Services
 {
