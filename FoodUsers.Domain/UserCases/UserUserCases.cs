@@ -47,11 +47,6 @@ namespace FoodUsers.Domain.UserCases
             return userModel;
         }
 
-        public Task<UserModel> GetUser(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         private async Task ValidateUser(UserModel user, string identityRoleId)
         {
             var validator = new ValidatorUserModel();
