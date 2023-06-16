@@ -23,13 +23,6 @@ namespace FoodUsers.Application.Services
             return UserMapper.ToUserResponseDTO(userModel);
         }
 
-        public async Task<UserResponseDTO> GetUser(int id)
-        {
-            var user = await userServicesPort.GetUser(id);
-
-            return UserMapper.ToUserResponseDTO(user);
-        }
-
         public async Task<UserResponseDTO?> GetUser(string email, string password)
         {
             var user = await userServicesPort.GetUser(email, password);
