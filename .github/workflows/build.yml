@@ -9,11 +9,11 @@ env:
   AWS_REGION: 'us-east-2'
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  AWS_ECR_REPO_NAME: 'foodusers'
-  AWS_ECR_REPO_LINK: 'public.ecr.aws/l4u4k6t2/foodusers'
-  AWS_ECR_REPO_PATH: 'public.ecr.aws/l4u4k6t2'
-  AWS_EB_ENVIRONMENT: 'FoodUsersTest-env-1'
-  AWS_EB_APPLICATION: 'FoodUsersTest'
+  AWS_ECR_REPO_NAME: ${{ secrets.AWS_ECR_REPO_NAME }}
+  AWS_ECR_REPO_LINK: ${{ secrets.AWS_ECR_REPO_LINK }}
+  AWS_ECR_REPO_PATH: ${{ secrets.AWS_ECR_REPO_PATH }}
+  AWS_EB_ENVIRONMENT: ${{ secrets.AWS_EB_ENVIRONMENT }}
+  AWS_EB_APPLICATION: ${{ secrets.AWS_EB_APPLICATION }}
 jobs:
   build:
     name: Build and analyze
