@@ -12,8 +12,8 @@ env:
   AWS_ECR_REPO_NAME: 'foodusers'
   AWS_ECR_REPO_LINK: 'public.ecr.aws/l4u4k6t2/foodusers'
   AWS_ECR_REPO_PATH: 'public.ecr.aws/l4u4k6t2'
-  AWS_EB_ENVIRONMENT: 'FoodUsers-env'
-  AWS_EB_APPLICATION: 'FoodUsers'
+  AWS_EB_ENVIRONMENT: 'FoodUsersTest-env-1'
+  AWS_EB_APPLICATION: 'FoodUsersTest'
 jobs:
   build:
     name: Build and analyze
