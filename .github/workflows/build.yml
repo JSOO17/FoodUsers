@@ -109,5 +109,5 @@ jobs:
         if: always() && steps.deploy.outcome == 'failure'
         uses: teknatha136/actions-google-chat-text-message@main
         with:
-            google-chat-webhook: https://chat.googleapis.com/v1/spaces/AAAAKMSYkyE/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=maQb_cpB9X7RjonmMZDkXYjb_2J2EAX0VBl43nl_3Vk
+            google-chat-webhook: ${{ secrets.URL_GOOGLE_CHAT }}
             text-message: Falló el deploy mipana. Ambiente- ${{ env.AWS_EB_ENVIRONMENT }}
